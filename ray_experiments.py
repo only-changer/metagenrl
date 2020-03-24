@@ -216,7 +216,7 @@ def train(args):
     config.update({
         'env_name': [
             'LunarLanderContinuous-v2',
-            'HalfCheetah-v2',
+            # 'HalfCheetah-v2',
         ],
     })
 
@@ -231,7 +231,7 @@ def test(args):
     config = configs.test(args.objective)
     config.update({
         'env_name': tune.grid_search([
-            'Hopper-v2',
+            'LunarLanderContinuous-v2',
         ]),
     })
 
