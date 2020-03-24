@@ -193,7 +193,7 @@ def init_ray(redis_address=None):
 
 def run(config, run_name='metagenrl', timesteps=300 * 1000, samples=1):
     tune.register_trainable(run_name, LLFSExperiment)
-    trial_gpus = count_required_gpus(config)
+    trial_gpus = 2
     print(f'Requiring {trial_gpus} extra gpus.')
     train_spec = {
         'run': run_name,
