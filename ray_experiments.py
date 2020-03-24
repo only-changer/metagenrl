@@ -14,7 +14,9 @@ import utils
 import ray_configs as configs
 
 from ray_extensions import ExtendedTrainable
+import os
 
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 np.warnings.filterwarnings('ignore')
 logger = logging.getLogger(__name__)
 
