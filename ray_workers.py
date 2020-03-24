@@ -70,7 +70,7 @@ class ObjectiveServer:
 # Use five workers per GPU
 # [ray] Due to a bug with floating point resources we need to subtract a small epsilon
 # Also allows ObjectiveServer to be on the same GPU
-@ray.remote(num_cpus=0, num_gpus=0.2 - 0.001)
+@ray.remote(num_cpus=0, num_gpus=0.1 - 0.001)
 class AgentWorker:
     """
     A ray worker that represents an agent with replay buffer, critic, and policy
