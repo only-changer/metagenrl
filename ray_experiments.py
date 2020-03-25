@@ -206,7 +206,7 @@ def run(config, run_name='metagenrl', timesteps=300 * 1000, samples=1):
         'num_samples': samples,
         'checkpoint_at_end': True,
     }
-    tune.run_experiments({'metagenrl': train_spec})
+    tune.run_experiments({'metagenrl': train_spec}, reuse_actors=True)
 
 
 def train(args):
