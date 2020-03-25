@@ -213,7 +213,7 @@ def train(args):
     """
     Performs meta-training
     """
-    config = configs.base(agent_count=20)
+    config = configs.base(agent_count=1)
     config.update({
         'env_name': [
             'LunarLanderContinuous-v2',
