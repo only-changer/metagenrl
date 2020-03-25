@@ -1,6 +1,10 @@
 import argparse
 import logging
 import math
+import warnings
+warnings.filterwarnings("ignore")
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 import numpy as np
 import tensorflow as tf
@@ -14,9 +18,6 @@ import utils
 import ray_configs as configs
 
 from ray_extensions import ExtendedTrainable
-import os
-
-os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 np.warnings.filterwarnings('ignore')
 logger = logging.getLogger(__name__)
 
