@@ -8,7 +8,7 @@ import tempfile
 from abc import ABC
 
 from ray.tune import Trainable
-from ray.tune.logger import TFLogger, UnifiedLogger
+from ray.tune.logger import TBXLogger, UnifiedLogger
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ class ExtendedTrainable(Trainable, ABC):
     def find_tf_logger(self):
         if isinstance(self._result_logger, UnifiedLogger):
             for logger in self._result_logger._loggers:
-                if isinstance(logger, TFLogger):
+                if isinstance(logger, TBXLogger):
                     return logger._file_writer
         return None
 
